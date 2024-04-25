@@ -21,9 +21,9 @@ export default defineConfig({
 
       /**
        * 自定义插入位置
-       * @default: body-last
+       * @default: home-last
        */
-      inject: 'body-last',
+      inject: 'home-last',
 
       /**
        * custom dom id

@@ -1,7 +1,9 @@
 <template>
 
   <el-card class="login-form-layout">
-    <el-form>
+    <el-form :model="loginForm"
+             :rules="loginRules"
+    >
       <div style="text-align: center">
         <svg-icon name="dna" style="width: 56px;height: 56px;" color="#409EFF"></svg-icon>
         <h2 style="color: #409EFF">Login</h2>
@@ -9,14 +11,14 @@
 
       <!--      1.用户名-->
       <el-form-item prop="username">
-        <el-input style="width: 100%; height: 120%">
+        <el-input style="width: 100%; height: 100%" v-model="loginForm.username" placeholder="username">
 
         </el-input>
       </el-form-item>
 
       <!--      2.密码-->
       <el-form-item prop="password">
-        <el-input style="width: 100%; height: 120%">
+        <el-input style="width: 100%; height: 100%" v-model="loginForm.password" placeholder="password">
 
         </el-input>
       </el-form-item>
@@ -54,19 +56,48 @@
 <script>
   import SvgIcon from "@/components/SvgIcon/index.vue";
   import login_center_bg from '@/assets/images/login_center_bg.png'
+  import {reactive} from "vue";
+  import {ElMessage} from "element-plus";
+  import {isvalidUsername} from '@/utils/validate.js'
+  import {login} from '@/api/login.js'
 
   export default {
     name: 'login',
     data() {
+      const validateUsername = (rule, value, callback) => {
+        if (!isvalidUsername(value)) {
+          callback(new Error('请输入正确的用户名'))
+        } else {
+          callback()
+        }
+      };
+      const validatePass = (rule, value, callback) => {
+        if (value.length < 3) {
+          callback(new Error('密码不能小于3位'))
+        } else {
+          callback()
+        }
+      };
       return{
         login_center_bg,
-        dialogVisible:false
+        dialogVisible:false,
+        loginForm : reactive({
+          username:'',
+          password:''
+        }),
+        loginRules : reactive({
+          username:[{required: true, trigger: 'blur', validator: validateUsername}],
+          password:[{required: true, trigger: 'blur', validator: validatePass}]
+        })
       }
+
     },
     components: {SvgIcon},
     methods:{
       login: function(){
-        this.$router.push('/home');
+        // this.$router.push('/layout');
+        // ElMessage.success("提交成功！")
+        login()
       },
       contact: function(){
         this.dialogVisible = true

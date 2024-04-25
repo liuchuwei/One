@@ -15,12 +15,12 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'virtual:svg-icons-register'
 
 // 5.store组件
-// import store from './store'
+import store from './store'
 
 // 创建app
 const app = createApp(App)
 app.use(router)
-// app.use(store)
+app.use(store)
 app.use(ElementPlus)
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component)
