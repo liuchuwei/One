@@ -95,9 +95,9 @@
     components: {SvgIcon},
     methods:{
       login: function(){
-        // this.$router.push('/layout');
+        this.$router.push('/layout');
         // ElMessage.success("提交成功！")
-        login()
+        // login()
       },
       contact: function(){
         this.dialogVisible = true

@@ -3,7 +3,7 @@
   <el-container class="layout-container-demo" style="height: 500px">
 
     <!--    1.侧边栏-->
-    <SiderBar></SiderBar>
+    <SiderBar style="height: 200%"></SiderBar>
 
     <el-container style="flex-direction: column">
       <!--      2.导航栏-->
