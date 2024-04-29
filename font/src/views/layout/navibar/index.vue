@@ -39,7 +39,7 @@
     name: "Navibar",
     methods: {
       logout: function(){
-        this.$router.push('/login');
+        this.$router.push('/home');
 
       },
       change_ef: function(){

@@ -26,7 +26,7 @@
       <br/>
       <!--      3.登录选项-->
       <el-form-item style="margin-bottom: 60px; text-align: center">
-        <el-button style="width: 45%; height: 120%" type="primary" @click="login">登录</el-button>
+        <el-button style="width: 45%; height: 120%" type="primary" @click="handleLogin" :loading="loading">登录</el-button>
         <el-button style="width: 50%; height: 120%" type="primary" @click="contact">联系作者</el-button>
       </el-form-item>
     </el-form>
@@ -58,8 +58,6 @@
   import login_center_bg from '@/assets/images/login_center_bg.png'
   import {reactive} from "vue";
   import {ElMessage} from "element-plus";
-  import {isvalidUsername} from '@/utils/validate.js'
-  import {login} from '@/api/login.js'
 
   export default {
     name: 'login',
@@ -88,16 +86,17 @@
         loginRules : reactive({
           username:[{required: true, trigger: 'blur', validator: validateUsername}],
           password:[{required: true, trigger: 'blur', validator: validatePass}]
-        })
+        }),
+        loading: false,
       }
 
     },
     components: {SvgIcon},
     methods:{
-      login: function(){
+      handleLogin: function(){
+
         this.$router.push('/layout');
-        // ElMessage.success("提交成功！")
-        // login()
+
       },
       contact: function(){
         this.dialogVisible = true

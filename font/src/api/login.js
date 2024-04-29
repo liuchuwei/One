@@ -1,15 +1,26 @@
 import request from "@/utils/request.js"
 
-export const login = (data) => {
-    console.log("请求登录")
-    return request(
-        {
-            method: "POST",
-            url: "/login",
-            data: {
-                username,
-                password
-            }
+export function login(username, password) {
+    return request({
+        url: '/login',
+        method: 'post',
+        data: {
+            username,
+            password
         }
-    )
+    })
+}
+
+export function getInfo() {
+    return request({
+        url: '/info',
+        method: 'get',
+    })
+}
+
+export function logout() {
+    return request({
+        url: '/logout',
+        method: 'post'
+    })
 }

@@ -7,13 +7,13 @@ import Home from '@/views/home/index.vue'
 
 // 2.定义路径
 const routes = [
-    {path:'/', component:Login},
+    {path:'/', component:Home},
     {path:'/login', component:Login},
+    {path:'/home', component:Home},
     {   path:'/layout',
         component:Layout,
+        meta:{requiresAuth:true},
         children:[
-            {path:'', component:Home},
-            {path:'/home', component:Home},
         ]
 
     },
