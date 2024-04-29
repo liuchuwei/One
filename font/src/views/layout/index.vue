@@ -5,11 +5,18 @@
       <!--    1.侧边栏-->
       <SiderBar></SiderBar>
 
-      <div class="content">
-        <!--      2.导航栏-->
-        <NaviBar></NaviBar>
+      <div class="body">
+
+        <div class="navigator">
+          <!--      2.导航栏-->
+          <NaviBar></NaviBar>
+        </div>
+
         <!--      3.主体-->
-        <router-view></router-view>
+        <div class="content">
+          <router-view></router-view>
+        </div>
+
       </div>
 
     </div>
@@ -42,7 +49,16 @@ export default {
   height: 100%;
 }
 
-.content{
+.body{
   width: 100%;
 }
+.navigator{
+  margin-left: 20px;
+}
+
+.content{
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
 </style>

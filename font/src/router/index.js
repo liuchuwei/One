@@ -2,18 +2,14 @@ import { createRouter,createWebHashHistory } from "vue-router"
 
 // 1.导入组件
 import Layout from '@/views/layout/index.vue'
-import Login from '@/views/login/index.vue'
 import Home from '@/views/home/index.vue'
 
 // 2.定义路径
 const routes = [
-    {path:'/', component:Home},
-    {path:'/login', component:Login},
-    {path:'/home', component:Home},
-    {   path:'/layout',
-        component:Layout,
-        meta:{requiresAuth:true},
+    {path: '/', redirect: '/home'},
+    {path:'/', component:Layout,
         children:[
+            {path:'/home',component:Home}
         ]
 
     },

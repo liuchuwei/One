@@ -8,9 +8,8 @@
 <!--    </el-icon>-->
 
     <!--        2.面包屑-->
-    <el-breadcrumb separator="/">
-      <el-breadcrumb-item v-for="(item,index) in breadList" :key="index">{{item}}
-      </el-breadcrumb-item>
+    <el-breadcrumb :separator-icon="ArrowRight" class="breadcrumb">
+      <el-breadcrumb-item v-for="item in crumbs" :to="item.to">{{item.path}}</el-breadcrumb-item>
     </el-breadcrumb>
 
     <!--        3.下拉菜单-->
@@ -38,16 +37,32 @@
     data(){
     },
     methods: {
-      logout: function(){
-        this.$router.push('/home');
-
-      },
-      change_ef: function(){
-        this.$store.commit('changeCollapsed');
-      }
+      // logout: function(){
+      //   this.$router.push('/home');
+      //
+      // },
+      // change_ef: function(){
+      //   this.$store.commit('changeCollapsed');
+      // }
     },
-    computed(){
+    computed: {
+      crumbs: function() {
+        let pathArray = this.$route.path.split("/")
+        pathArray.shift()
+        let breadcrumbs = pathArray.reduce((breadcrumbArray, path, idx) => {
+          breadcrumbArray.push({
+            path: path,
+            to: breadcrumbArray[idx - 1]
+                ? "/" + breadcrumbArray[idx - 1].path + "/" + path
+                : "/" + path,
+            text: this.$route.matched[idx].meta.breadCrumb || path,
+          });
+          return breadcrumbArray;
+        }, [])
+        return breadcrumbs;
+      }
     }
+
   }
 </script>
 
@@ -56,6 +71,7 @@
   display: flex;
   align-items: center;
   height: 66px;
+  box-shadow: 0px 5px 0px 0px whitesmoke;
 
   .home-EF{
     margin-right: 17px;
@@ -71,6 +87,12 @@
       justify-content: center;
     }
   }
+
+}
+
+.breadcrumb{
+  margin-left: 20px;
+  font-size: 20px;
 
 }
 </style>
