@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import { useCalendarStore } from '../stores/store.js';
+import { useCalendarStore } from '@/store/calender.js';
 import { toRefs } from 'vue';
 
 import { ElButton, ElPopover, ElSwitch } from 'element-plus';
@@ -78,9 +78,9 @@ import { ElButton, ElPopover, ElSwitch } from 'element-plus';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiCalendar, mdiClockTimeFourOutline } from '@mdi/js';
 
-import RichtextEditor from '../components/RichtextEditor.vue';
-import SmallCalendar from './SmallCalendar.vue';
-import TimePicker from './TimePicker.vue';
+import RichtextEditor from '@/components/Calender/moudles/RichtextEditor.vue';
+import SmallCalendar from '@/components/Calender/moudles/SmallCalendar.vue';
+import TimePicker from '@/components/Calender/moudles/TimePicker.vue';
 
 export default {
   setup() {

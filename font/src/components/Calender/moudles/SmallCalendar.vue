@@ -39,7 +39,7 @@ import { ElButton } from 'element-plus';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiChevronLeft, mdiChevronRight } from '@mdi/js';
 
-import { useCalendarStore } from '../stores/store.js';
+import { useCalendarStore } from '@/store/calender.js';
 import { toRefs } from 'vue';
 
 

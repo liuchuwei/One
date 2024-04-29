@@ -6,7 +6,9 @@
 
       <el-avatar class="my_avatar" src="src/assets/images/avatar.jpg"/>
       <h2>Wei</h2>
-      <h4 style="font-style: italic; color: gray">在云端，才不会有乌云密布</h4>
+      <h4 style="font-style: italic; color: gray">
+        no dark shadows loom <br> above the clouds
+      </h4>
 
     </div>
 
@@ -14,30 +16,30 @@
     <el-menu class="slide_menu" :collapse=$store.state.isCollapsed>
 
       <el-menu-item>
-        <el-icon><location /></el-icon>
+        <el-icon><house /></el-icon>
         <span>Home</span>
       </el-menu-item>
 
       <el-menu-item>
-        <el-icon><location /></el-icon>
+        <el-icon><Document /></el-icon>
         <span>News</span>
       </el-menu-item>
 
       <el-menu-item>
-        <el-icon><location /></el-icon>
+        <el-icon><coffee /></el-icon>
         <span>Careers</span>
       </el-menu-item>
 
       <el-menu-item>
-        <el-icon><location /></el-icon>
-        <span>Tags</span>
-      </el-menu-item>
-
-
-      <el-menu-item>
-        <el-icon><location /></el-icon>
+        <el-icon><clock /></el-icon>
         <span>Times</span>
       </el-menu-item>
+
+      <el-menu-item>
+        <el-icon><files /></el-icon>
+        <span>Archive</span>
+      </el-menu-item>
+
 
 
     </el-menu>
@@ -51,7 +53,10 @@
 </template>
 
 <script>
+import {Clock, Coffee, Document, Files, House} from "@element-plus/icons-vue";
+
   export default {
+    components: {Files, Clock, Coffee, Document, House},
     data() {
       return {
       }
@@ -100,7 +105,7 @@
 .slide_menu:not(.el-menu--collapse){
 
     background-color: transparent;
-    margin-top: 40px;
+    margin-top: 0;
     margin-left: 55px;
 }
 

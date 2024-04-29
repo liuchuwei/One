@@ -6,7 +6,7 @@ const store =createStore({
         isCollapsed: false,
     },
     modules:{
-        user,
+        user
     },
     mutations: {
         // 侧边栏的展开

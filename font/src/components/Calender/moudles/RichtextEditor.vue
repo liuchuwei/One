@@ -204,7 +204,7 @@ export default {
 </script>
   
 <style lang="scss">
-@import "../assets/css/dracula.css";
+@import "@/assets/css/dracula.css";
 
 .ProseMirror:focus {
   outline: none;
