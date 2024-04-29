@@ -1,23 +1,18 @@
 <template>
 
-  <el-container class="layout-container-demo" style="height: 500px">
+    <div class="container">
 
-    <!--    1.侧边栏-->
-    <SiderBar style="height: 200%"></SiderBar>
+      <!--    1.侧边栏-->
+      <SiderBar></SiderBar>
 
-    <el-container style="flex-direction: column">
-      <!--      2.导航栏-->
-      <NaviBar></NaviBar>
-      <!--      3.主体-->
-      <el-main style="height: 100%">
-        <el-scrollbar>
-          <router-view></router-view>
-        </el-scrollbar>
-      </el-main>
+      <div class="content">
+        <!--      2.导航栏-->
+        <NaviBar></NaviBar>
+        <!--      3.主体-->
+        <router-view></router-view>
+      </div>
 
-    </el-container>
-
-  </el-container>
+    </div>
 
 </template>
 
@@ -42,5 +37,12 @@ export default {
 
 
 <style scoped>
+.container{
+  display: flex;
+  height: 100%;
+}
 
+.content{
+  width: 100%;
+}
 </style>

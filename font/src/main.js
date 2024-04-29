@@ -17,6 +17,9 @@ import 'virtual:svg-icons-register'
 // 5.store组件
 import store from './store'
 
+// 6.基本css
+import "@/css/base.css"
+
 // 创建app
 const app = createApp(App)
 app.use(router)
