@@ -11,13 +11,13 @@
       </el-row>
     </div>
   </div> -->
-  <div style="width: 100%;">
+  <div>
     <Calendar></Calendar>
   </div>
 </template>
 
 <script>
-import Calendar from '../components/CalendarUseDiv.vue';
+import Calendar from '@/components/Calendar/CalendarUseDiv.vue';
 import { ElRow, ElCol } from 'element-plus';
 
 export default {

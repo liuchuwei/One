@@ -1,5 +1,5 @@
 <template>
-  <div style="padding: 20px;">
+  <div style="padding: 10px;">
     <div style="display: flex; align-items: center; justify-content: end;">
       <span style="padding: 10px;">All Day</span><el-switch v-model="allDay"
         style="--el-switch-on-color: #dda8cd; "></el-switch>
@@ -78,9 +78,9 @@ import { ElButton, ElPopover, ElSwitch } from 'element-plus';
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiCalendar, mdiClockTimeFourOutline } from '@mdi/js';
 
-import RichtextEditor from '@/components/Calender/moudles/RichtextEditor.vue';
-import SmallCalendar from '@/components/Calender/moudles/SmallCalendar.vue';
-import TimePicker from '@/components/Calender/moudles/TimePicker.vue';
+import RichtextEditor from '@/components/Calendar/RichtextEditor.vue';
+import SmallCalendar from './SmallCalendar.vue';
+import TimePicker from './TimePicker.vue';
 
 export default {
   setup() {
@@ -213,7 +213,7 @@ input {
 }
 
 .text-hover {
-  padding: 2px 5px;
+  padding: 2px 10px;
   border-radius: 5px;
   cursor: pointer;
   /* background-color: var(--primary-light-color-2); */

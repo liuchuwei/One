@@ -5,8 +5,8 @@
     <div :class="{ 'FoldHeader': $store.state.isCollapsed, 'ExpandHeader': !$store.state.isCollapsed }">
 
       <el-avatar class="my_avatar" src="src/assets/images/avatar.jpg"/>
-      <h2>Wei</h2>
-      <h4 style="font-style: italic; color: gray">
+      <h2 style="font-size: 24px">Wei</h2>
+      <h4 style="font-style: italic; color: gray; font-size: 16px">
         no dark shadows loom <br> above the clouds
       </h4>
 
@@ -30,33 +30,37 @@
         <span>Careers</span>
       </el-menu-item>
 
-      <el-menu-item>
-        <el-icon><clock /></el-icon>
-        <span>Times</span>
-      </el-menu-item>
+      <el-sub-menu>
+        <template #title>
+          <el-icon><files /></el-icon>
+          <span>Archive</span>
+        </template>
 
-      <el-menu-item>
-        <el-icon><files /></el-icon>
-        <span>Archive</span>
-      </el-menu-item>
+        <el-menu-item>
+          <el-icon><edit /></el-icon>
+          <span>Tags</span>
+        </el-menu-item>
 
+        <el-menu-item>
+          <el-icon><clock /></el-icon>
+          <span>Times</span>
+        </el-menu-item>
 
+      </el-sub-menu>
 
     </el-menu>
 
     <!--    3.底部图片-->
     <img src="@/assets/images/slide_bear.png">
 
-
-
   </div>
 </template>
 
 <script>
-import {Clock, Coffee, Document, Files, House} from "@element-plus/icons-vue";
+import {Clock, Coffee, Document, Edit, Files, House} from "@element-plus/icons-vue";
 
   export default {
-    components: {Files, Clock, Coffee, Document, House},
+    components: {Edit, Files, Clock, Coffee, Document, House},
     data() {
       return {
       }

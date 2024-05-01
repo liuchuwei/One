@@ -96,7 +96,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useCalendarStore } from '@/store/calender.js';
 import { toRefs } from 'vue';
 
-import AddEventInfo from '@/components/Calender/moudles/AddEventInfo.vue';
+import AddEventInfo from '@/components/Calendar/AddEventInfo.vue';
 
 
 export default {

@@ -3,21 +3,21 @@
     <button @click="editor.chain().focus().toggleBold().run()"
       :disabled="!editor.can().chain().focus().toggleBold().run()" :class="{ 'is-active': editor.isActive('bold') }">
       <div class="flex-container svg-icon-size">
-        <img src="../assets/img/bold.svg">
+        <img src="@/assets/img/bold.svg">
       </div>
     </button>
 
     <button @click="editor.chain().focus().toggleItalic().run()"
       :disabled="!editor.can().chain().focus().toggleItalic().run()" :class="{ 'is-active': editor.isActive('italic') }">
       <div class="flex-container svg-icon-size">
-        <img src="../assets/img/italic.svg">
+        <img src="@/assets/img/italic.svg">
       </div>
     </button>
 
     <button @click="editor.chain().focus().toggleStrike().run()"
       :disabled="!editor.can().chain().focus().toggleStrike().run()" :class="{ 'is-active': editor.isActive('strike') }">
       <div class="flex-container svg-icon-size">
-        <img src="../assets/img/strike.svg">
+        <img src="@/assets/img/strike.svg">
       </div>
     </button>
     <button @click="editor.chain().focus().toggleCode().run()"
@@ -34,19 +34,19 @@
     <button @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
       :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }">
       <div class="flex-container svg-icon-size">
-        <img src="../assets/img/heading-h1.svg">
+        <img src="@/assets/img/heading-h1.svg">
       </div>
     </button>
     <button @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
       :class="{ 'is-active': editor.isActive('heading', { level: 2 }) }">
       <div class="flex-container svg-icon-size">
-        <img src="../assets/img/heading-h2.svg">
+        <img src="@/assets/img/heading-h2.svg">
       </div>
     </button>
     <button @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
       :class="{ 'is-active': editor.isActive('heading', { level: 3 }) }">
       <div class="flex-container svg-icon-size">
-        <img src="../assets/img/heading-h3.svg">
+        <img src="@/assets/img/heading-h3.svg">
       </div>
     </button>
     <!-- <button @click="editor.chain().focus().toggleHeading({ level: 5 }).run()" :class="{ 'is-active': editor.isActive('heading', { level: 5 }) }">
@@ -86,7 +86,7 @@
     </button>
     <button @click="editor.chain().focus().setHorizontalRule().run()">
       <div class="flex-container svg-icon-size">
-        <img src="../assets/img/format-separator.svg">
+        <img src="@/assets/img/format-separator.svg">
       </div>
     </button>
     <!-- <button @click="editor.chain().focus().setHardBreak().run()">
